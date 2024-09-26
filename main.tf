@@ -96,6 +96,8 @@ data "aws_iam_policy_document" "service_account_assume_role" {
     }
   }
 
+  override_policy_documents = var.trust_policy_override_documents
+
   lifecycle {
     precondition {
       condition     = length(local.eks_cluster_oidc_issuer) > 0

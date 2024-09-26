@@ -63,3 +63,9 @@ variable "managed_policy_arns" {
   description = "List of managed policies to attach to created role"
   default     = []
 }
+
+variable "trust_policy_override_documents" {
+  type        = set(string)
+  description = "Optional list of override documents for EKS role trust policy."
+  default     = []
+}
